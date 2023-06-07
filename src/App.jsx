@@ -1,10 +1,9 @@
 import './App.css'
 import React from 'react'
-import TaskList from './TaskList'
+import TaskList from './components/TaskList'
 
 function App() {
-  
-  
+    
   return (
     <>
      <TaskList/>
