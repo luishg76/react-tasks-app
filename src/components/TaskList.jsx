@@ -23,11 +23,16 @@ function TaskList() {
     ]);
   }
 
+  function deleteTask(idTask){
+    let newtasks=taskslist.filter(t=>t.id!=idTask)
+    setTaskslist(newtasks)    
+  }
+
   if (taskslist.length === 0) content = <h2>No existen tareas que mostrar</h2>;
   else {
     content = taskslist.map((task) => {
       return (
-        <TaskCard key={task.id} task={task}/>
+        <TaskCard key={task.id} task={task} deleteTask={deleteTask}/>
       );
     });
   }

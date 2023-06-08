@@ -1,11 +1,15 @@
+import TaskContext from "../contexts/TaskContext";
 
-function TaskCard({task}) {
+function TaskCard({ task, deleteTask }) {
   return (
-    <div>
+    <TaskContext>
+      <div>
         <h2>{task.title}</h2>
         <p>{task.descripcion}</p>
-    </div>
-  )
+        <button onClick={() => deleteTask(task.id)}>Eliminar</button>
+      </div>
+    </TaskContext>
+  );
 }
 
-export default TaskCard
+export default TaskCard;
