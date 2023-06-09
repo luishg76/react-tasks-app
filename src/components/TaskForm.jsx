@@ -1,5 +1,9 @@
-import { useState } from "react";
-function TaskForm({addTask}) {
+import {useState } from "react";
+import { useContext } from "react";
+import { TaskContext } from "../contexts/TaskContext";
+
+function TaskForm() {
+  const {addTask}=useContext(TaskContext)
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   function handleSubmit(){    
